@@ -27,4 +27,10 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		return loginDAO.findStatus(loginDTO);
 	}
+
+	@Override
+	public String findPwd(String userID) throws Exception {
+		// TODO Auto-generated method stub
+		return loginDAO.findPwd(userID);
+	}
 }

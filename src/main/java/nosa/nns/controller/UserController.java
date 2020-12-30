@@ -19,7 +19,7 @@ public class UserController {
 	private UserService userService;
 	
 	@Autowired
-	public UserController(nosa.nns.service.UserService userService) {
+	public UserController(UserService userService) {
 		this.userService = userService;
 	}
 
@@ -38,9 +38,6 @@ public class UserController {
 		
 		HashMap<String, String> result = new HashMap<String, String>();
 		
-		//1. 비밀번호 암호화
-		
-		//2. Id 및 Email 체크
 		if(userService.findById(userDTO.getUserId()) == 1) {
 			result.put("code","2");
 			result.put("msg","입력하신 ID가 이미 존재합니다."); 

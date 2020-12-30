@@ -6,6 +6,11 @@
 		SELECT COUNT(user_id) FROM TB_USER WHERE user_id = #{userId} AND user_pw = #{userPwd}
 	</select>
 	
+	<!-- 비밀번호 복호화 -->
+	<select id="findPwd" parameterType="String" resultType ="String">
+		SELECT user_pw FROM TB_USER WHERE user_id = #{userId}
+	</select>
+	
 	<!-- 가입 승인 확인 -->
 	<select id="findStatus" parameterType="nosa.nns.dto.LoginDTO" resultType ="int">
 		SELECT user_status FROM TB_USER WHERE user_id = #{userId} AND user_pw = #{userPwd}

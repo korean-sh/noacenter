@@ -1,5 +1,9 @@
 package nosa.nns.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -19,8 +23,9 @@ public class LoginController {
 	
 	private LoginService loginService;
 	
-	@Autowired		
-	public LoginController(nosa.nns.service.LoginService loginService) {
+
+	@Autowired
+	public LoginController(LoginService loginService) {
 		this.loginService = loginService;
 	}
 
@@ -88,16 +93,52 @@ public class LoginController {
 	 * 비밀번호 암호화 검증 필요
 	 */
 	public Boolean validateLogin(LoginDTO loginDTO) throws Exception {
-		if( loginService.findByIdAndPwd(loginDTO) == 1) {
-			return true;
+		
+		/*
+		 * 테스트 계정
+		 * hohoho 박성호123!
+		 */
+		String password = getSHA256(loginDTO.getUserPwd());
+		String encryptionPwd = loginService.findPwd(loginDTO.getUserId());
+		
+		System.out.println(password);
+		System.out.println(encryptionPwd);
+		
+		if(encryptionPwd != null) {
+			if(encryptionPwd.equals(password)) {	
+				loginDTO.setUserPwd(password);
+				if( loginService.findByIdAndPwd(loginDTO) == 1) {
+					return true;
+				}else {
+					return false;
+				}
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}
 	}
 	
+	/*
+	 * 비밀번호 암호화
+	 */
+	public static String getSHA256(String input) throws UnsupportedEncodingException, NoSuchAlgorithmException{
+
+		String toReturn = null;
+		
+		MessageDigest digest = MessageDigest.getInstance("SHA-256");
+		digest.reset();
+		digest.update(input.getBytes("utf8"));
+		
+		toReturn = String.format("%064x", new BigInteger(1, digest.digest()));
+		
+		return toReturn;
+	}
+	
 	/**
 	 * 로그인 아이디 상태 검증
-	 * (1) - 승인 (2) - 미승인 (3) - 탈퇴
+	 * (0) - 미승인 (1) - 승인  (2) - 탈퇴
 	 * @throws Exception 
 	 */
 	public int statusLogin(LoginDTO loginDTO) throws Exception {

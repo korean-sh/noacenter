@@ -10,4 +10,5 @@ import nosa.nns.dto.LoginDTO;
 public interface LoginDAO {
 	public int findByIdAndPwd(LoginDTO loginDTO) throws Exception;
 	public int findStatus(LoginDTO loginDTO) throws Exception;
+	public String findPwd(String userID) throws Exception;
 }
