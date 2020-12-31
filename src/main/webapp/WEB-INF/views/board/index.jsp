@@ -12,8 +12,14 @@
 </script>
 </head>
 <body>
-	<h2>로그인 성공</h2>
-	<h2>${sessionScope.userId}</h2>
-	<button onclick="fnLogout()">로그아웃</button>
+	<!-- session 확인 -->
+	<input type="text" id="sessionId" class="sessionId" value= "${sessionScope.userId}" style="display: none;"/>
+	<div id="bodyDiv">
+		<h2>로그인 성공</h2>
+		<h2>${sessionScope.userId}</h2>
+		<button onclick="fnLogout()">로그아웃</button>
+
+	</div>
+	<script type="text/javascript" src="resources/js/sessionCheck.js" charset="UTF-8"></script>
 </body>
 </html>

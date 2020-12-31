@@ -101,9 +101,6 @@ public class LoginController {
 		String password = getSHA256(loginDTO.getUserPwd());
 		String encryptionPwd = loginService.findPwd(loginDTO.getUserId());
 		
-		System.out.println(password);
-		System.out.println(encryptionPwd);
-		
 		if(encryptionPwd != null) {
 			if(encryptionPwd.equals(password)) {	
 				loginDTO.setUserPwd(password);
