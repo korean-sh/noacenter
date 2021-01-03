@@ -160,3 +160,12 @@ function registerAction(){
 		}
 	});
 }
+
+/*
+ * Enter Key 입력
+ */
+$("body").keyup(function(event){
+	if(event.keyCode === 13){
+		validateRegisterForm();
+	}
+});

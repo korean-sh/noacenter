@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
@@ -101,14 +102,15 @@ public class LoginController {
 		String password = getSHA256(loginDTO.getUserPwd());
 		String encryptionPwd = loginService.findPwd(loginDTO.getUserId());
 		
-		if(encryptionPwd != null) {
+		Optional<String> optOfPwd = Optional.ofNullable(encryptionPwd);
+		
+		if(optOfPwd.isPresent()) {
 			if(encryptionPwd.equals(password)) {	
 				loginDTO.setUserPwd(password);
-				if( loginService.findByIdAndPwd(loginDTO) == 1) {
+				if( loginService.findByIdAndPwd(loginDTO) == 1)
 					return true;
-				}else {
+				else 
 					return false;
-				}
 			}else {
 				return false;
 			}

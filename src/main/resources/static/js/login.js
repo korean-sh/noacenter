@@ -44,9 +44,30 @@ function loginAction(id,pwd){
 	});
 }
 
-/**
+/*
  *  회원가입 버튼
  */
 function userRegitser(){
 	window.location.href="sign.do";
 }
+
+/*
+ *	Enter Key 인식 (제이쿼리)
+ */
+$("#idField").keyup(function(event){
+	if(event.keyCode === 13){
+		btnClickEvent();
+	}
+});
+
+$("#pwdField").keyup(function(event){
+	if(event.keyCode === 13){
+		btnClickEvent();
+	}
+});
+
+$("body").keyup(function(event){
+	if(event.keyCode === 13){
+		btnClickEvent();
+	}
+});
