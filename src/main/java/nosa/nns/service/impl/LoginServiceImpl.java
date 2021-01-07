@@ -1,10 +1,11 @@
-package nosa.nns.service;
+package nosa.nns.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import nosa.nns.dao.LoginDAO;
 import nosa.nns.dto.LoginDTO;
+import nosa.nns.service.LoginService;
 
 @Service("loginService")
 public class LoginServiceImpl implements LoginService{

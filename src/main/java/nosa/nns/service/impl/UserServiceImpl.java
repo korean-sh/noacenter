@@ -1,4 +1,4 @@
-package nosa.nns.service;
+package nosa.nns.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import nosa.nns.dao.UserDAO;
 import nosa.nns.dto.UserDTO;
+import nosa.nns.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{

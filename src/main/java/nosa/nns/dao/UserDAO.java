@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import nosa.nns.dto.UserDTO;
 
 @Mapper
-@Repository
 public interface UserDAO {
 	
 	public void save(UserDTO user) throws Exception;
