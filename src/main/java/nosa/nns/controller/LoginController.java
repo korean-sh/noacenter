@@ -58,7 +58,7 @@ public class LoginController {
 				result.put("msg","로그인 성공");
 				session.setAttribute("userId", loginDTO.getUserId());
 			}else {
-				result.put("code","3");
+				result.put("code","2");
 				result.put("msg","탈퇴 및 삭제된 아이디입니다.");
 			}
 		}else {

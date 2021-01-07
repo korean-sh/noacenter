@@ -93,7 +93,7 @@ ul li {
     height: 100%px;
     color: rgb(178, 158, 178);
     line-height: 200%;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 ul li:hover{background-color: rgb(17, 100, 163); color:white;}

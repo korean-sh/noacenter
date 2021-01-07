@@ -1,21 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<script>
-	function fnLogout(){
-		window.location.href = "logout.do";
-	}
-</script>
+<script src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="resources/js/index.js" charset="UTF-8"></script>
 <!-- CSS -->
 <link rel="stylesheet" href="resources/css/index.css">
 </head>
  <body>
+ 		<!-- seccion Check -->
+ 		<input type="text" id="sessionId" class="sessionId" value= "${sessionScope.userId}" style="display: none;"/>
         <div class="snb">
-            <!--ÇÁ·ÎÇÊ ¿µ¿ª-->
+            <!--í”„ë¡œí•„ ì˜ì—­-->
             <div class="snb_profile">
                 <div class="profile_table">
                     <table style="margin-left: auto; margin-right: auto;">
@@ -25,33 +24,35 @@
                                     <img src="resources/images/login/m_default.gif" class="profile_img"/>
                                 </div>
                             </td>
-                            <td style="text-align: right;">³ë»ç¹ßÀüÀç´Ü ÀüÁ÷Áö¿øÆÀ</td>
+                            <td style="text-align: left;">ë…¸ì‚¬ë°œì „ìž¬ë‹¨ ì „ì§ì§€ì›íŒ€</td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">¹Ú¼ºÈ£ Àü¹®À§¿ø</td>
+                            <td style="text-align: left;">ë°•ì„±í˜¸ ì „ë¬¸ìœ„ì›</td>
                         </tr>
                     </table>
                 </div>
                 <div class="profile_logout">
-                    <span style="font-size: x-small;">·Î±×¾Æ¿ô</span>
+                    <span id="logout" style="font-size: x-small;">ë¡œê·¸ì•„ì›ƒ</span>
                 </div>
             </div>
-            <!-- ¸Þ´º ¿µ¿ª -->
+            
+            <!-- ë©”ë‰´ ì˜ì—­ -->
             <div class="snb_menu">
-                <!-- »ç¿ëÀÚ¿¡ µû¶ó ´Ù¸£°Ô ¸Þ´º Ãâ·Â -->
+                <!-- ì‚¬ìš©ìžì— ë”°ë¼ ë‹¤ë¥´ê²Œ ë©”ë‰´ ì¶œë ¥ -->
                 <ul>
-                    <li><a href="#">°í¿ë¾ÈÁ¤Á¤º¸¸Á °øÁö»çÇ×</a></li>
-                    <li><a href="#">ÀüÃ¼ ¼¾ÅÍ</a></li>
-                    <li><a href="#">³ë»ç¹ßÀüÀç´Ü ÀüÁ÷Áö¿øÆÀ</a></li>
-                    <li><a href="#">³ë»ç¹ßÀüÀç´Ü ¼­¿ï¼¾ÅÍ</a></li>
-                    <li><a href="#">³ë»ç¹ßÀüÀç´Ü °­¿ø¼¾ÅÍ</a></li>
-                    <li><a href="#">³ë»ç¹ßÀüÀç´Ü Á¦ÁÖ¼¾ÅÍ</a></li>
+                	<li id="homePath"><a href="#">HOME</a></li>
+                    <li id="testPath"> <a href="#">ê³ ìš©ì•ˆì •ì •ë³´ë§ ê³µì§€ì‚¬í•­</a></li>
+                    <li><a href="#">ì „ì²´ ì„¼í„°</a></li>
+                    <li><a href="#">ë…¸ì‚¬ë°œì „ìž¬ë‹¨ ì „ì§ì§€ì›íŒ€</a></li>
+                    <li><a href="#">ë…¸ì‚¬ë°œì „ìž¬ë‹¨ ì„œìš¸ì„¼í„°</a></li>
+                    <li><a href="#">ë…¸ì‚¬ë°œì „ìž¬ë‹¨ ê°•ì›ì„¼í„°</a></li>
+                    <li><a href="#">ë…¸ì‚¬ë°œì „ìž¬ë‹¨ ì œì£¼ì„¼í„°</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="parent">
-            <div class="child">
+            <div id="child" class="child">
                 content
             </div>
         </div>

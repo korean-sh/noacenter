@@ -31,7 +31,7 @@
 						<p>ID</p>
 						<input type="text" id="idField" autocomplete="off"/>
 					</div>
-					<form>
+					<form onsubmit="return false;">
 					<div class="login-input-wrap">
 						<p>Password</p>
 						<input type="password" id="pwdField" autocomplete="off"/>

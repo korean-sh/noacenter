@@ -51,4 +51,14 @@ public class UserController {
 		}
 		return result;
 	}
+	
+	@GetMapping("/test.do")
+	public String test() {
+		return "board/test1";
+	}
+	
+	@GetMapping("/home.do")
+	public String test2() {
+		return "board/home";
+	}
 }

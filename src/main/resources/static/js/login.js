@@ -54,6 +54,7 @@ function userRegitser(){
 /*
  *	Enter Key 인식 (제이쿼리)
  */
+
 $("#idField").keyup(function(event){
 	if(event.keyCode === 13){
 		btnClickEvent();
@@ -61,12 +62,6 @@ $("#idField").keyup(function(event){
 });
 
 $("#pwdField").keyup(function(event){
-	if(event.keyCode === 13){
-		btnClickEvent();
-	}
-});
-
-$("body").keyup(function(event){
 	if(event.keyCode === 13){
 		btnClickEvent();
 	}
