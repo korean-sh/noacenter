@@ -14,11 +14,12 @@
         }
 
         .wrap {
-            margin:20px 0px 20px 20px;
+            margin:0 auto;
             width:600px;
             border-radius: 10px;
             background-color: rgb(255,255,255);
             box-shadow: 4px 4px 4px gray;
+            margin-top:30px;
         }
 
         .first {
@@ -73,6 +74,7 @@
     </style>
 </head>
 <body>
+	<!-- for 문 -->
     <div class="wrap">
         <div class="content first">
             <div class="item item1"></div>
@@ -98,8 +100,8 @@
             <p>하이루</p>
         </div>
     </div>
-
-    <div class="wrap">
+    
+     <div class="wrap">
         <div class="content first">
             <div class="item item1"></div>
             <div class="item item2"></div>
@@ -119,9 +121,9 @@
             </div>
         </div>
         <div class="content last">
-            <p>안녕하세요222</p>
-            <p>테스트 글입니다.222</p>
-            <p>하이루22</p>
+            <p>안녕하세요</p>
+            <p>테스트 글입니다.</p>
+            <p>하이루</p>
         </div>
     </div>
 </body>
